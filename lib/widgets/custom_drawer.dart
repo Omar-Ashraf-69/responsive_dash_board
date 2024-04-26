@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_dash_board_project/models/drawer_item_model.dart';
 import 'package:responsive_dash_board_project/utils/app_images.dart';
@@ -14,21 +17,47 @@ class CustomDrawer extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Colors.white,
       ),
-      child: Column(
-        children: [
-          Card(
-            color: Color(0xfffafafa),
-            elevation: 0,
-            child: CustomListTile(
-              image: Assets.imagesAvatar3,
-              title: "Omar Ashraf",
-              subtitle: "Omar.Ashraf.Abdulrahman@gmail.com",
+      child: CustomScrollView(
+        slivers: [
+          const SliverToBoxAdapter(
+            child: Card(
+              color: Color(0xfffafafa),
+              elevation: 0,
+              child: CustomListTile(
+                image: Assets.imagesAvatar3,
+                title: "Omar Ashraf",
+                subtitle: "Omar.Ashraf.Abdulrahman@gmail.com",
+              ),
             ),
           ),
-          SizedBox(
-            height: 8,
+          const SliverToBoxAdapter(
+            child: SizedBox(
+              height: 8,
+            ),
           ),
-          DrawerItemsSection(),
+          const DrawerItemsSection(),
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              children: [
+                const Expanded(child: SizedBox()),
+                InActiveDrawerItem(
+                    drawerItemModel: DrawerItemModel(
+                  image: Assets.imagesSettings,
+                  title: "Settings system",
+                )),
+                InActiveDrawerItem(
+                  drawerItemModel: DrawerItemModel(
+                    image: Assets.imagesLogout,
+                    title: 'Logout',
+                  ),
+                ),
+                const SizedBox(
+                  height: 48,
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -68,24 +97,19 @@ class _DrawerItemsSectionState extends State<DrawerItemsSection> {
   int selectedItem = 0;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 20.0),
-      child: ListView.builder(
-        itemCount: items.length,
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        itemBuilder: (context, index) => GestureDetector(
-          onTap: () {
-            if (selectedItem != index) {
-              setState(() {
-                selectedItem = index;
-              });
-            }
-          },
-          child: DrawerItemWidget(
-            drawerItemModel: items[index],
-            isActive: index == selectedItem,
-          ),
+    return SliverList.builder(
+      itemCount: items.length,
+      itemBuilder: (context, index) => GestureDetector(
+        onTap: () {
+          if (selectedItem != index) {
+            setState(() {
+              selectedItem = index;
+            });
+          }
+        },
+        child: DrawerItemWidget(
+          drawerItemModel: items[index],
+          isActive: index == selectedItem,
         ),
       ),
     );

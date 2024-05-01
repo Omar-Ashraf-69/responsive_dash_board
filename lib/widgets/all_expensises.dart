@@ -13,7 +13,9 @@ class AllExpensises extends StatelessWidget {
     return const CustomBackgroundContainer(
       widget: Column(
         children: [
-          AllExpensesHeader(),
+          CustomHeader(
+            headerText: 'All Expenses',
+          ),
           SizedBox(
             height: 16,
           ),

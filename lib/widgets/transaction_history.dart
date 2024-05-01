@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board_project/models/transaction_model.dart';
 import 'package:responsive_dash_board_project/utils/app_styles.dart';
-import 'package:responsive_dash_board_project/widgets/tansaction_item.dart';
 import 'package:responsive_dash_board_project/widgets/transaction_history_list_view.dart';
 
 class TransactionHistory extends StatelessWidget {
@@ -21,7 +19,7 @@ class TransactionHistory extends StatelessWidget {
           style: AppStyles.styleRegular16(context).copyWith(color: Colors.grey),
         ),
         const SizedBox(
-          height: 20,
+          height: 16,
         ),
         const TransactionListView(),
       ],

@@ -14,6 +14,7 @@ class TransactionItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
       ),
+      margin: const EdgeInsets.only(bottom: 6),
       child: ListTile(
         title: Text(transaction.title),
         titleTextStyle: AppStyles.styleSemiBold16(context),

@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:responsive_dash_board_project/models/user_info_model.dart';
 import 'package:responsive_dash_board_project/utils/app_styles.dart';
 
-class TransactionItem extends StatelessWidget {
-  const TransactionItem({
+class UserInfoListTile extends StatelessWidget {
+  const UserInfoListTile({
     super.key,
     required this.userInfo,
   });

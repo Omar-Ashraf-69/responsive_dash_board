@@ -4,6 +4,7 @@ import 'package:responsive_dash_board_project/widgets/card.dart';
 import 'package:responsive_dash_board_project/widgets/card_section.dart';
 import 'package:responsive_dash_board_project/widgets/cards_page_view.dart';
 import 'package:responsive_dash_board_project/widgets/custom_drawer.dart';
+import 'package:responsive_dash_board_project/widgets/transaction_history.dart';
 
 class DesktopLayout extends StatelessWidget {
   const DesktopLayout({super.key});
@@ -27,7 +28,7 @@ class DesktopLayout extends StatelessWidget {
             width: 24,
           ),
           Expanded(
-            child: CardSection(),
+            child: TransactionHistory(),
           ),
         ],
       ),

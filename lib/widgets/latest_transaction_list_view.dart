@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board_project/models/user_info_model.dart';
 import 'package:responsive_dash_board_project/utils/app_images.dart';
-import 'package:responsive_dash_board_project/widgets/transaction_item.dart';
+import 'package:responsive_dash_board_project/widgets/user_info_list_tile.dart';
 
 class LatestTransactionsListView extends StatelessWidget {
   const LatestTransactionsListView({
@@ -32,7 +31,7 @@ class LatestTransactionsListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         child: Row(
           children: users
-              .map((e) => IntrinsicWidth(child: TransactionItem(userInfo: e)))
+              .map((e) => IntrinsicWidth(child: UserInfoListTile(userInfo: e)))
               .toList(),
         ));
     // return ListView.builder(

@@ -21,15 +21,12 @@ class CardWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
           ),
-          padding: const EdgeInsets.only(
-            right: 20,
-            bottom: 24,
-          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               ListTile(
-                contentPadding: const EdgeInsets.only(left: 24, right: 18),
+                contentPadding:
+                    const EdgeInsets.only(left: 31, right: 42, top: 8),
                 title: const Padding(
                   padding: EdgeInsets.symmetric(vertical: 10.0),
                   child: Text(
@@ -43,17 +40,25 @@ class CardWidget extends StatelessWidget {
                 trailing: SvgPicture.asset(Assets.imagesGallery),
               ),
               const Spacer(),
-              Text(
-                "0918 8124 6521 9531",
-                style: AppStyles.styleSemiBold24(context)
-                    .copyWith(color: Colors.white),
+              Padding(
+                padding: const EdgeInsets.only(right: 24.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      "0918 8124 6521 9531",
+                      style: AppStyles.styleSemiBold24(context)
+                          .copyWith(color: Colors.white),
+                    ),
+                    Text(
+                      "12/20 - 124",
+                      style: AppStyles.styleRegular16(context)
+                          .copyWith(color: Colors.white),
+                    ),
+                  ],
+                ),
               ),
-              const SizedBox(height: 10),
-              Text(
-                "12/20 - 124",
-                style: AppStyles.styleMedium16(context)
-                    .copyWith(color: Colors.white),
-              ),
+              const SizedBox(height: 26),
             ],
           ),
         ),

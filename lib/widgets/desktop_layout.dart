@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board_project/widgets/all_expenses_invoice_section.dart';
 import 'package:responsive_dash_board_project/widgets/card.dart';
+import 'package:responsive_dash_board_project/widgets/card_section.dart';
+import 'package:responsive_dash_board_project/widgets/cards_page_view.dart';
 import 'package:responsive_dash_board_project/widgets/custom_drawer.dart';
 
 class DesktopLayout extends StatelessWidget {
@@ -25,7 +27,7 @@ class DesktopLayout extends StatelessWidget {
             width: 24,
           ),
           Expanded(
-            child: CardWidget(),
+            child: CardSection(),
           ),
         ],
       ),

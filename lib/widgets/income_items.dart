@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board_project/models/chart_item_details.dart';
 import 'package:responsive_dash_board_project/widgets/income_item_detials.dart';
@@ -30,7 +29,7 @@ class ChartItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 14),
+      padding: const EdgeInsets.only(left: 12.0),
       child: ListView.separated(
         itemCount: items.length,
         shrinkWrap: true,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_dash_board_project/widgets/all_expenses_invoice_section.dart';
 import 'package:responsive_dash_board_project/widgets/card_transactionhistory_income_section.dart';
 import 'package:responsive_dash_board_project/widgets/custom_drawer.dart';
+import 'package:responsive_dash_board_project/widgets/mobile_layout.dart';
 
 class TabletDashBoard extends StatelessWidget {
   const TabletDashBoard({super.key});
@@ -17,16 +18,9 @@ class TabletDashBoard extends StatelessWidget {
         ),
         Expanded(
           flex: 3,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                AllExpensesAndInvoiceSection(),
-                SizedBox(
-                  height: 24,
-                ),
-                CardTransactionhistoryIncomeSection(),
-              ],
-            ),
+          child: Padding(
+            padding: EdgeInsets.only(top: 24.0),
+            child: MobileDashboardLayout(),
           ),
         ),
         SizedBox(

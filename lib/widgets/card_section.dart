@@ -26,6 +26,7 @@ class _CardSectionState extends State<CardSection> {
     super.initState();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

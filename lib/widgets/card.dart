@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_dash_board_project/utils/app_images.dart';
 import 'package:responsive_dash_board_project/utils/app_styles.dart';
@@ -11,7 +12,7 @@ class CardWidget extends StatelessWidget {
     return Container(
       color: Colors.white,
       child: AspectRatio(
-        aspectRatio: 420 / 215,
+        aspectRatio: 420 / 224,
         child: Container(
           decoration: ShapeDecoration(
             image: const DecorationImage(
@@ -28,7 +29,7 @@ class CardWidget extends StatelessWidget {
                 contentPadding:
                     const EdgeInsets.only(left: 31, right: 42, top: 8),
                 title: const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10.0),
+                  padding: EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
                     'Card Name',
                     style: TextStyle(color: Colors.white),
@@ -58,7 +59,7 @@ class CardWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 26),
+              Flexible(child: const SizedBox(height: 26)),
             ],
           ),
         ),

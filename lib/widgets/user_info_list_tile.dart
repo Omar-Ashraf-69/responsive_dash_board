@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:responsive_dash_board_project/models/user_info_model.dart';
 import 'package:responsive_dash_board_project/utils/app_styles.dart';
@@ -34,16 +35,22 @@ class UserInfoListTile extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  userInfo.name,
-                  style: AppStyles.styleMedium16(context),
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    userInfo.name,
+                    style: AppStyles.styleMedium16(context),
+                  ),
                 ),
                 const SizedBox(
                   height: 4,
                 ),
-                Text(
-                  userInfo.email,
-                  style: AppStyles.styleRegular12(context),
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    userInfo.email,
+                    style: AppStyles.styleRegular12(context),
+                  ),
                 ),
               ],
             ),

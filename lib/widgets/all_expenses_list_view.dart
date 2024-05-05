@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board_project/models/expenses_item_model.dart';
 import 'package:responsive_dash_board_project/utils/app_images.dart';
@@ -38,6 +37,52 @@ class _AllExpensesListViewState extends State<AllExpensesListView> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      children: [
+        Expanded(
+            child: GestureDetector(
+          onTap: () {
+            setState(() {
+              selectedItem = 0;
+            });
+          },
+          child: AllExpensesItem(
+            isActive: selectedItem == 0,
+            itemModel: items[0],
+          ),
+        )),
+        const SizedBox(
+          width: 8,
+        ),
+        Expanded(
+            child: GestureDetector(
+          onTap: () {
+            setState(() {
+              selectedItem = 1;
+            });
+          },
+          child: AllExpensesItem(
+            isActive: selectedItem == 1,
+            itemModel: items[1],
+          ),
+        )),
+        const SizedBox(
+          width: 8,
+        ),
+        Expanded(
+            child: GestureDetector(
+          onTap: () {
+            setState(() {
+              selectedItem = 2;
+            });
+          },
+          child: AllExpensesItem(
+            isActive: selectedItem == 2,
+            itemModel: items[2],
+          ),
+        )),
+      ],
+    );
+    return Row(
       children: items.asMap().entries.map((e) {
         return Expanded(
             child: GestureDetector(
@@ -47,9 +92,7 @@ class _AllExpensesListViewState extends State<AllExpensesListView> {
             });
           },
           child: Padding(
-            padding: e.key == 1
-                ? const EdgeInsets.symmetric(horizontal: 12.0)
-                : EdgeInsets.zero,
+            padding: EdgeInsets.symmetric(horizontal: e.key == 1 ? 12.0 : 0),
             child: AllExpensesItem(
               isActive: selectedItem == e.key,
               itemModel: e.value,

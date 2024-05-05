@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../models/expenses_item_model.dart';
 import '../utils/app_styles.dart';
@@ -51,23 +53,32 @@ class InActiveAllExpensesItem extends StatelessWidget {
           const SizedBox(
             height: 32,
           ),
-          Text(
-            itemModel.itemName,
-            style: AppStyles.styleMedium16(context),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemModel.itemName,
+              style: AppStyles.styleMedium16(context),
+            ),
           ),
           const SizedBox(
             height: 8,
           ),
-          Text(
-            itemModel.itemDate,
-            style: AppStyles.styleRegular14(context),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemModel.itemDate,
+              style: AppStyles.styleRegular14(context),
+            ),
           ),
           const SizedBox(
             height: 16,
           ),
-          Text(
-            itemModel.itemPrice,
-            style: AppStyles.styleSemiBold24(context),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemModel.itemPrice,
+              style: AppStyles.styleSemiBold24(context),
+            ),
           ),
         ],
       ),
@@ -90,6 +101,10 @@ class ActiveAllExpensesItem extends StatelessWidget {
         color: const Color(0xff4eb7f2),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
+          side: const BorderSide(
+            width: 1,
+            color: Color(0xff4eb7f2),
+          ),
         ),
       ),
       padding: const EdgeInsets.all(20),
@@ -104,26 +119,35 @@ class ActiveAllExpensesItem extends StatelessWidget {
           const SizedBox(
             height: 32,
           ),
-          Text(
-            itemModel.itemName,
-            style:
-                AppStyles.styleMedium16(context).copyWith(color: Colors.white),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemModel.itemName,
+              style: AppStyles.styleMedium16(context)
+                  .copyWith(color: Colors.white),
+            ),
           ),
           const SizedBox(
             height: 8,
           ),
-          Text(
-            itemModel.itemDate,
-            style:
-                AppStyles.styleRegular14(context).copyWith(color: Colors.white),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemModel.itemDate,
+              style: AppStyles.styleRegular14(context)
+                  .copyWith(color: Colors.white),
+            ),
           ),
           const SizedBox(
             height: 16,
           ),
-          Text(
-            itemModel.itemPrice,
-            style: AppStyles.styleSemiBold24(context)
-                .copyWith(color: Colors.white),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemModel.itemPrice,
+              style: AppStyles.styleSemiBold24(context)
+                  .copyWith(color: Colors.white),
+            ),
           ),
         ],
       ),
